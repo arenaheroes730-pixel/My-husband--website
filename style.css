@@ -731,37 +731,44 @@ transform: translateY(0) rotate(0deg);
 
 }
 /* MOBILE HOME PAGE FIX */
-
 @media (max-width: 600px) {
 
     #home {
         min-height: 100vh;
-        padding: 25px 15px 40px;
-        overflow-y: auto;
+        padding: 18px 12px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     #home h1 {
-        font-size: 28px;
-        margin: 15px 0 10px;
+        font-size: 25px;
+        margin: 8px 0;
     }
 
     #home p {
-        font-size: 16px;
-        margin: 8px 0 18px;
+        font-size: 14px;
+        margin: 5px 0 12px;
     }
 
     .cute-polaroid {
-        width: 240px;
-        margin: 18px auto;
+        width: 210px;
+        padding: 10px 10px 15px;
+        margin: 10px auto 15px;
     }
 
     .polaroid-photo {
-        height: 250px;
+        height: 220px;
+    }
+
+    .polaroid-caption {
+        font-size: 16px;
+        margin-top: 9px;
     }
 
     #home button {
-        margin-top: 15px;
-        margin-bottom: 20px;
+        margin: 5px auto 0;
+        padding: 12px 20px;
+        font-size: 15px;
     }
 }
-
