@@ -247,19 +247,4 @@ function playVoice() {
         button.classList.remove("voice-playing");
     };
 }
-/* Mobile screen fix */
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
 
-body {
-    zoom: 1;
-}
-
-.page {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
