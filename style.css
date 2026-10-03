@@ -730,3 +730,38 @@ transform: translateY(0) rotate(0deg);
 }
 
 }
+/* MOBILE HOME PAGE FIX */
+
+@media (max-width: 600px) {
+
+    #home {
+        min-height: 100vh;
+        padding: 25px 15px 40px;
+        overflow-y: auto;
+    }
+
+    #home h1 {
+        font-size: 28px;
+        margin: 15px 0 10px;
+    }
+
+    #home p {
+        font-size: 16px;
+        margin: 8px 0 18px;
+    }
+
+    .cute-polaroid {
+        width: 240px;
+        margin: 18px auto;
+    }
+
+    .polaroid-photo {
+        height: 250px;
+    }
+
+    #home button {
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+}
+
