@@ -1,0 +1,732 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffd6e7 0 8%, transparent 9%),
+        radial-gradient(circle at 80% 30%, #ffe8a8 0 6%, transparent 7%),
+        linear-gradient(135deg, #ffe6f0, #fff4d6);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+    display: none;
+
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 30px 20px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+    color: #e91e63;
+    font-size: clamp(32px, 9vw, 48px);
+    margin: 10px 0;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+p {
+    color: #6b4050;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FIRST PHOTO
+========================= */
+
+.husband-photo {
+    width: 150px;
+    height: 190px;
+
+    object-fit: cover;
+
+    background: white;
+
+    padding: 8px;
+    padding-bottom: 30px;
+
+    border-radius: 3px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    transform: rotate(-4deg);
+
+    margin: 15px 0;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    margin-top: 20px;
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #e91e63;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(233,30,99,0.3);
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.hearts {
+    color: rgba(233,30,99,0.4);
+
+    font-size: 28px;
+
+    letter-spacing: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.photos {
+    display: flex;
+
+    gap: 18px;
+
+    width: 100%;
+    max-width: 500px;
+
+    overflow-x: auto;
+
+    padding: 30px 20px;
+
+    scrollbar-width: none;
+}
+
+.photos::-webkit-scrollbar {
+    display: none;
+}
+
+.photos img {
+    width: 145px;
+    height: 180px;
+
+    object-fit: cover;
+
+    flex: 0 0 145px;
+
+    background: white;
+
+    padding: 7px;
+    padding-bottom: 28px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+
+    scroll-snap-align: center;
+}
+
+.photos img:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.photos img:nth-child(2) {
+    transform: rotate(4deg);
+}
+
+.photos img:nth-child(3) {
+    transform: rotate(-3deg);
+}
+
+.photos img:nth-child(4) {
+    transform: rotate(5deg);
+}
+
+.photos img:nth-child(5) {
+    transform: rotate(-4deg);
+}
+
+
+/* =========================
+   LOVE CARD
+========================= */
+
+.love-card {
+    background: rgba(255,255,255,0.9);
+
+    padding: 25px;
+
+    width: 90%;
+    max-width: 400px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.love-card p {
+    text-align: left;
+
+    color: #e91e63;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   GIFTS
+========================= */
+
+.gifts {
+    display: flex;
+
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+.gift {
+    font-size: 65px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.gift:active {
+    transform: scale(1.2);
+}
+
+#giftMessage {
+    color: #e91e63;
+
+    font-weight: bold;
+
+    min-height: 45px;
+
+    max-width: 330px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FINAL LOVE LETTER
+========================= */
+
+#final {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.final-hearts {
+    font-size: 25px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 12px;
+
+    animation: floatHearts 2s ease-in-out infinite;
+}
+
+.love-letter {
+    width: 92%;
+
+    max-width: 430px;
+
+    background: rgba(255,255,255,0.96);
+
+    padding: 30px 24px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+
+    position: relative;
+
+    animation: letterAppear 1s ease;
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+}
+
+.tiny-text {
+    color: #e91e63;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.love-letter .big-heart {
+    font-size: 65px;
+
+    margin: 5px 0;
+
+    animation: heartbeat 1s infinite;
+}
+
+.love-letter h1 {
+    font-size: clamp(30px, 8vw, 42px);
+
+    margin: 8px 0 15px;
+}
+
+.letter-text {
+    color: #6b4050;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+.special-line {
+    color: #e91e63;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+}
+
+.forever {
+    margin: 22px 0;
+
+    padding: 15px;
+
+    background: #fff0f6;
+
+    border-radius: 18px;
+
+    color: #b51b52;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    line-height: 1.5;
+}
+
+.forever span {
+    font-size: 19px;
+}
+
+.love-letter h2 {
+    color: #e91e63;
+
+    font-size: clamp(24px, 7vw, 35px);
+
+    margin: 18px 0 10px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.ending {
+    color: #6b4050;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+.ending b {
+    color: #e91e63;
+}
+
+.kiss {
+    font-size: 27px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   GIFT FLOATING HEARTS
+========================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: 80px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    animation: heartFloat 2s ease-out forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+@keyframes letterAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes floatHearts {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes heartFloat {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(0.7)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(-180px)
+            scale(1.2)
+            rotate(15deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-400px)
+            scale(0.8)
+            rotate(-15deg);
+    }
+}
+#voiceButton {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    padding: 16px 24px;
+    border-radius: 50px;
+
+    background: linear-gradient(135deg, #ff8fba, #ffb6d5);
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(255, 105, 160, 0.3),
+        0 0 0 rgba(255, 105, 160, 0.5);
+
+    transition: transform 0.2s ease;
+    animation: softHeartbeat 2s infinite;
+}
+
+#voiceButton:hover {
+    transform: scale(1.05);
+}
+
+#voiceButton:active {
+    transform: scale(0.95);
+}
+
+@keyframes softHeartbeat {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 20px rgba(255, 105, 160, 0.3);
+    }
+
+    10% {
+        transform: scale(1.04);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.06);
+        box-shadow: 0 8px 25px rgba(255, 105, 160, 0.55);
+    }
+
+    45% {
+        transform: scale(1);
+    }
+}
+
+.voice-playing {
+    animation: voiceGlow 0.8s infinite alternate !important;
+}
+
+@keyframes voiceGlow {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 10px #ff8fba;
+    }
+
+    to {
+        transform: scale(1.08);
+        box-shadow:
+            0 0 25px #ff8fba,
+            0 0 45px rgba(255, 143, 186, 0.6);
+    }
+}
+/* =========================
+   POLAROID MEMORIES
+========================= */
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+.polaroid {
+    width: 190px;
+    background: #fff;
+    padding: 10px 10px 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.polaroid:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(4deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-3deg);
+}
+
+.polaroid:nth-child(4) {
+    transform: rotate(5deg);
+}
+
+.polaroid:nth-child(5) {
+    transform: rotate(-4deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.08);
+    z-index: 5;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid p {
+    margin: 12px 3px 0;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .photos {
+        gap: 22px;
+        padding: 10px;
+    }
+
+    .polaroid {
+        width: 155px;
+        padding: 8px 8px 15px;
+    }
+
+    .polaroid img {
+        height: 155px;
+    }
+
+    .polaroid p {
+        font-size: 12px;
+    }
+}
+/* =========================
+CUTE FAVOURITE PERSON POLAROID
+========================= */
+
+.cute-polaroid {
+width: 285px;
+margin: 30px auto;
+padding: 14px 14px 20px;
+background: #fffdfc;
+border-radius: 4px;
+box-shadow:
+0 12px 25px rgba(150, 80, 100, 0.18),
+0 3px 8px rgba(0, 0, 0, 0.08);
+
+transform: rotate(-2deg);
+position: relative;
+
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.cute-polaroid:hover {
+transform: rotate(0deg) scale(1.03);
+box-shadow:
+0 18px 35px rgba(150, 80, 100, 0.25),
+0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-photo {
+width: 100%;
+height: 300px;
+overflow: hidden;
+background: #f8e9ee;
+}
+
+.polaroid-photo img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+.polaroid-caption {
+text-align: center;
+margin-top: 14px;
+
+font-family: cursive;
+font-size: 19px;
+color: #d94f78;
+letter-spacing: 0.3px;
+
+}
+
+.polaroid-caption span {
+font-size: 17px;
+margin: 0 5px;
+}
+
+.tiny-heart {
+position: absolute;
+font-size: 20px;
+color: #e87598;
+animation: polaroidFloat 2.5s ease-in-out infinite;
+}
+
+.heart-one {
+top: -13px;
+right: 25px;
+transform: rotate(12deg);
+}
+
+.heart-two {
+bottom: 40px;
+left: -10px;
+font-size: 16px;
+animation-delay: 0.7s;
+}
+
+@keyframes polaroidFloat {
+0%, 100% {
+transform: translateY(0) rotate(0deg);
+}
+
+50% {
+    transform: translateY(-5px) rotate(5deg);
+}
+
+}
